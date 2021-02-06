@@ -8,9 +8,9 @@ from .models import Post
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "slug", "status", "created_on")
-    list_filter = "status"
+    list_filter = ("status",)
     search_fields = ["title", "content", "cups", "team_name"]
-    prepopulated_fields = {"slug": ("title", "teame_name", "cups")}
+    prepopulated_fields = {"slug": ("title", "team_name", "cups",)}
 
     class PostAdmin(SummernoteModelAdmin):
         summernote_fields = "__all__"
