@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,4 +24,8 @@ urlpatterns = [
     path("post/", include("post.urls")),
     path("admin/", admin.site.urls),
     url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^search/', include('search.urls', namespace='search')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
