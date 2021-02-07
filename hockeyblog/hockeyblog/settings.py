@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "post",
     "django_summernote",
+    'sorl.thumbnail',
 
 ]
 SITE_ID = 1

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
-from posts.models import Post
+from post.models import Post
 
 
 def searchposts(request):
