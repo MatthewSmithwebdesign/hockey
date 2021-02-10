@@ -17,7 +17,7 @@ class Post(models.Model):
     cups = models.CharField(max_length=200)
     team_name = models.CharField(max_length=200)
     status = models.IntegerField(choices=STATUS, default=0)
-    context_object_name = "posts"
+    
     def __str__(self):
         return self.title
 

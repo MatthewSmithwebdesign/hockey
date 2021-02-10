@@ -17,9 +17,10 @@ def searchposts(request):
             context = {"results": results, "submitbutton": submitbutton}
 
             return render(request, "search/search.html", context)
-
+            
         else:
             return render(request, "search/search.html")
-
+           
     else:
         return render(request, "search/search.html")
+        

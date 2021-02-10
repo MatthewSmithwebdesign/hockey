@@ -26,6 +26,9 @@
               <li class="nav-item">
                 <a class="nav-link"href="/">Cups</a>
               </li>
+              <form action="{% url 'search:searchposts' %}" method="get">
+              <input type="q" placeholder="Search.."><button id='Submit'>Submit</button>
+              </form>
             </ul>
         </div>
     </nav>
