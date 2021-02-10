@@ -1,5 +1,7 @@
-<h1>Search Page</h1>
+{% extends "base.html" %} 
 
+<h1>Search Page</h1>
+{% block content%}
 <br/>
 <form action="{% url 'search:searchposts' %}" method="GET" value="{{request.GET.q}}">
 Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="searchposts"/>
@@ -25,3 +27,4 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="search
 No search results for this query
 {% endif %}
 {% endif %}
+{% endblock %}

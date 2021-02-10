@@ -22,9 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("post.urls")),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
+    path("", include("post.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
