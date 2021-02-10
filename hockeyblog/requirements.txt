@@ -1,0 +1,4 @@
+# packages need to run this app
+#1 Django-Summernote
+#2 Pillow
+#3 sorl-thumbnails

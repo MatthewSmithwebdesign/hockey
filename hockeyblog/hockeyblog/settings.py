@@ -14,7 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 #MEDIA
 MEDIA_URL = '/media/'
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "post",
     "django_summernote",
+    'sorl.thumbnail',
 
 ]
 SITE_ID = 1
@@ -89,7 +91,7 @@ WSGI_APPLICATION = "hockeyblog.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -134,4 +136,12 @@ STATIC_URL = "/static/"
 
 #Static files dir
 
-STATICFILES_DIRS = STATICFILES_DIRS =[os.path.join(BASE_DIR, 'staticfiles')]
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, "hockeyblog/static"),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"

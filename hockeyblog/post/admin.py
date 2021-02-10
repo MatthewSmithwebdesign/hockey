@@ -11,9 +11,8 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ("status",)
     search_fields = ["title", "content", "cups", "team_name"]
     prepopulated_fields = {"slug": ("title", "team_name", "cups",)}
-
-    class PostAdmin(SummernoteModelAdmin):
-        summernote_fields = "__all__"
+    summernote_fields = ("content",)
+   
 
 
 admin.site.register(Post, PostAdmin)
