@@ -33,6 +33,9 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "$1205i!#vsu4zvt8jm*5tnt00_m(-n52gx1rt%gn_qpz(wstgr"
+
 ALLOWED_HOSTS = []
 
 
